@@ -1,0 +1,203 @@
+[
+  {
+    "id": "Q01",
+    "category": "direct",
+    "question": "What is the standard refund policy for purchases?",
+    "description": "Tests direct factual retrieval and page/section citation from policy documents.",
+    "gold_sources": [
+      {
+        "source_file": "billing_policy_2024.pdf",
+        "page_number": 7,
+        "section_heading": "Refund Policy"
+      }
+    ],
+    "ground_truth_answer": "Customers can request a full refund within 30 calendar days of purchase. Annual subscriptions are prorated on a monthly basis.",
+    "expected_confidence": "HIGH",
+    "expected_conflict": false,
+    "unanswerable": false
+  },
+  {
+    "id": "Q02",
+    "category": "direct",
+    "question": "How do I navigate to request a billing refund?",
+    "description": "Tests direct UI/navigation procedure extraction.",
+    "gold_sources": [
+      {
+        "source_file": "billing_policy_2024.pdf",
+        "page_number": 8,
+        "section_heading": "How to Request a Refund"
+      }
+    ],
+    "ground_truth_answer": "Go to Account Settings > Billing > Transaction History, locate the specific charge, and click 'Request Refund'.",
+    "expected_confidence": "HIGH",
+    "expected_conflict": false,
+    "unanswerable": false
+  },
+  {
+    "id": "Q03",
+    "category": "direct",
+    "question": "How can an employee reset their multi-factor authentication?",
+    "description": "Tests retrieval from plain text account administration notes.",
+    "gold_sources": [
+      {
+        "source_file": "account_access_notes.txt",
+        "page_number": null,
+        "section_heading": "MFA Recovery"
+      }
+    ],
+    "ground_truth_answer": "Generate a one-time emergency recovery token in Security Settings or contact the IT Helpdesk.",
+    "expected_confidence": "HIGH",
+    "expected_conflict": false,
+    "unanswerable": false
+  },
+  {
+    "id": "Q04",
+    "category": "paraphrase",
+    "question": "Can I get my money back if I cancel my subscription after 2 weeks?",
+    "description": "Paraphrase of Q01 ('money back' instead of 'refund', '2 weeks' instead of '30 days').",
+    "gold_sources": [
+      {
+        "source_file": "billing_policy_2024.pdf",
+        "page_number": 7,
+        "section_heading": "Refund Policy"
+      }
+    ],
+    "ground_truth_answer": "Yes, because the cancellation is within the 30-day refund window from purchase.",
+    "expected_confidence": "HIGH",
+    "expected_conflict": false,
+    "unanswerable": false
+  },
+  {
+    "id": "Q05",
+    "category": "paraphrase",
+    "question": "I'm locked out because of 2FA, what steps should I take?",
+    "description": "Paraphrase of Q03 ('locked out because of 2FA' vs 'reset multi-factor authentication').",
+    "gold_sources": [
+      {
+        "source_file": "account_access_notes.txt",
+        "page_number": null,
+        "section_heading": "MFA Recovery"
+      }
+    ],
+    "ground_truth_answer": "Use a recovery token from Security Settings or reach out to IT Helpdesk for an MFA reset.",
+    "expected_confidence": "HIGH",
+    "expected_conflict": false,
+    "unanswerable": false
+  },
+  {
+    "id": "Q06",
+    "category": "paraphrase",
+    "question": "Where in the portal can I submit a reimbursement claim for subscription fees?",
+    "description": "Paraphrase of Q02 ('reimbursement claim for subscription fees' vs 'request a refund').",
+    "gold_sources": [
+      {
+        "source_file": "billing_policy_2024.pdf",
+        "page_number": 8,
+        "section_heading": "How to Request a Refund"
+      }
+    ],
+    "ground_truth_answer": "Navigate to Account Settings > Billing > Transaction History to select the transaction and submit a refund request.",
+    "expected_confidence": "HIGH",
+    "expected_conflict": false,
+    "unanswerable": false
+  },
+  {
+    "id": "Q07",
+    "category": "conflict",
+    "question": "What is the maximum allowed API request rate for standard-tier users?",
+    "description": "Tests FR-06 conflict handling across Product Config Guide (1000/min) and Troubleshooting FAQ (500/min).",
+    "gold_sources": [
+      {
+        "source_file": "product_config_guide.html",
+        "section_heading": "Rate Limits"
+      },
+      {
+        "source_file": "troubleshooting_faq.md",
+        "section_heading": "Error 429: Rate Limit Exceeded"
+      }
+    ],
+    "ground_truth_answer": "Documents conflict: Product Configuration Guide states 1,000 req/min, whereas Troubleshooting FAQ cites 500 req/min before error 429.",
+    "expected_confidence": "MEDIUM",
+    "expected_conflict": true,
+    "unanswerable": false
+  },
+  {
+    "id": "Q08",
+    "category": "conflict",
+    "question": "When does session expiration occur for inactivity on corporate laptops?",
+    "description": "Tests conflict across legacy policy (15 mins) and updated 2024 security guide (30 mins).",
+    "gold_sources": [
+      {
+        "source_file": "account_access_notes.txt",
+        "section_heading": "Session Inactivity"
+      },
+      {
+        "source_file": "troubleshooting_faq.md",
+        "section_heading": "Session Timeout"
+      }
+    ],
+    "ground_truth_answer": "Conflict present: older access notes specify 15 minutes, while the newer FAQ indicates 30 minutes of inactivity.",
+    "expected_confidence": "MEDIUM",
+    "expected_conflict": true,
+    "unanswerable": false
+  },
+  {
+    "id": "Q09",
+    "category": "ambiguous",
+    "question": "How do I upgrade my license?",
+    "description": "Tests ambiguous question handling where tier or product context is missing.",
+    "gold_sources": [
+      {
+        "source_file": "billing_policy_2024.pdf",
+        "section_heading": "Subscription Plans"
+      },
+      {
+        "source_file": "product_config_guide.html",
+        "section_heading": "Enterprise Tier"
+      }
+    ],
+    "ground_truth_answer": "Upgrades depend on whether moving from Starter to Professional (self-serve under Billing) or to Enterprise (requires contacting Sales). Clarification needed.",
+    "expected_confidence": "MEDIUM",
+    "expected_conflict": false,
+    "unanswerable": false
+  },
+  {
+    "id": "Q10",
+    "category": "ambiguous",
+    "question": "Why is my request failing?",
+    "description": "Tests ambiguous troubleshooting query without error code, environment, or payload details.",
+    "gold_sources": [
+      {
+        "source_file": "troubleshooting_faq.md",
+        "section_heading": "Common HTTP Errors"
+      }
+    ],
+    "ground_truth_answer": "Cannot determine cause without status code. Common causes in docs: 401 (expired token), 403 (insufficient permissions), 429 (rate limits).",
+    "expected_confidence": "MEDIUM",
+    "expected_conflict": false,
+    "unanswerable": false
+  },
+  {
+    "id": "Q11",
+    "category": "unanswerable",
+    "question": "What is the company parental leave policy and duration?",
+    "description": "Completely out of scope (HR/Benefits question not in uploaded technical/billing docs). Tests FR-07 fallback.",
+    "gold_sources": [],
+    "ground_truth_answer": "Information not available in the uploaded knowledge collection. Consult HR portal.",
+    "expected_confidence": "LOW",
+    "expected_conflict": false,
+    "unanswerable": true
+  },
+  {
+    "id": "Q12",
+    "category": "unanswerable",
+    "question": "How do I submit an expense reimbursement for client dinners?",
+    "description": "Tests fallback on enterprise finance question absent from technical documentation.",
+    "gold_sources": [],
+    "ground_truth_answer": "Not found in technical documentation. Please consult the enterprise expense management system (Concur).",
+    "expected_confidence": "LOW",
+    "expected_conflict": false,
+    "unanswerable": true
+  }
+]
+

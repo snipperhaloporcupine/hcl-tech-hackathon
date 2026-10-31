@@ -1,0 +1,215 @@
+{
+  "metrics": {
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "mrr": 1.0,
+    "conflict_f1": 1.0,
+    "fallback_accuracy": 1.0,
+    "citation_groundedness": 1.0
+  },
+  "detailed_results": [
+    {
+      "id": "Q01",
+      "category": "direct",
+      "question": "What is the standard refund policy for purchases?",
+      "retrieval": {
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "rr": 1.0,
+        "first_hit_rank": 1
+      },
+      "confidence": "HIGH",
+      "expected_confidence": "HIGH",
+      "has_conflict": false,
+      "expected_conflict": false,
+      "citations_count": 1
+    },
+    {
+      "id": "Q02",
+      "category": "direct",
+      "question": "How do I navigate to request a billing refund?",
+      "retrieval": {
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "rr": 1.0,
+        "first_hit_rank": 1
+      },
+      "confidence": "HIGH",
+      "expected_confidence": "HIGH",
+      "has_conflict": false,
+      "expected_conflict": false,
+      "citations_count": 1
+    },
+    {
+      "id": "Q03",
+      "category": "direct",
+      "question": "How can an employee reset their multi-factor authentication?",
+      "retrieval": {
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "rr": 1.0,
+        "first_hit_rank": 1
+      },
+      "confidence": "HIGH",
+      "expected_confidence": "HIGH",
+      "has_conflict": false,
+      "expected_conflict": false,
+      "citations_count": 1
+    },
+    {
+      "id": "Q04",
+      "category": "paraphrase",
+      "question": "Can I get my money back if I cancel my subscription after 2 weeks?",
+      "retrieval": {
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "rr": 1.0,
+        "first_hit_rank": 1
+      },
+      "confidence": "HIGH",
+      "expected_confidence": "HIGH",
+      "has_conflict": false,
+      "expected_conflict": false,
+      "citations_count": 1
+    },
+    {
+      "id": "Q05",
+      "category": "paraphrase",
+      "question": "I'm locked out because of 2FA, what steps should I take?",
+      "retrieval": {
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "rr": 1.0,
+        "first_hit_rank": 1
+      },
+      "confidence": "HIGH",
+      "expected_confidence": "HIGH",
+      "has_conflict": false,
+      "expected_conflict": false,
+      "citations_count": 1
+    },
+    {
+      "id": "Q06",
+      "category": "paraphrase",
+      "question": "Where in the portal can I submit a reimbursement claim for subscription fees?",
+      "retrieval": {
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "rr": 1.0,
+        "first_hit_rank": 1
+      },
+      "confidence": "HIGH",
+      "expected_confidence": "HIGH",
+      "has_conflict": false,
+      "expected_conflict": false,
+      "citations_count": 1
+    },
+    {
+      "id": "Q07",
+      "category": "conflict",
+      "question": "What is the maximum allowed API request rate for standard-tier users?",
+      "retrieval": {
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "rr": 1.0,
+        "first_hit_rank": 1
+      },
+      "confidence": "MEDIUM",
+      "expected_confidence": "MEDIUM",
+      "has_conflict": true,
+      "expected_conflict": true,
+      "citations_count": 2
+    },
+    {
+      "id": "Q08",
+      "category": "conflict",
+      "question": "When does session expiration occur for inactivity on corporate laptops?",
+      "retrieval": {
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "rr": 1.0,
+        "first_hit_rank": 1
+      },
+      "confidence": "MEDIUM",
+      "expected_confidence": "MEDIUM",
+      "has_conflict": true,
+      "expected_conflict": true,
+      "citations_count": 2
+    },
+    {
+      "id": "Q09",
+      "category": "ambiguous",
+      "question": "How do I upgrade my license?",
+      "retrieval": {
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "rr": 1.0,
+        "first_hit_rank": 1
+      },
+      "confidence": "MEDIUM",
+      "expected_confidence": "MEDIUM",
+      "has_conflict": false,
+      "expected_conflict": false,
+      "citations_count": 2
+    },
+    {
+      "id": "Q10",
+      "category": "ambiguous",
+      "question": "Why is my request failing?",
+      "retrieval": {
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "rr": 1.0,
+        "first_hit_rank": 1
+      },
+      "confidence": "MEDIUM",
+      "expected_confidence": "MEDIUM",
+      "has_conflict": false,
+      "expected_conflict": false,
+      "citations_count": 1
+    },
+    {
+      "id": "Q11",
+      "category": "unanswerable",
+      "question": "What is the company parental leave policy and duration?",
+      "retrieval": {
+        "hit@1": null,
+        "hit@3": null,
+        "hit@5": null,
+        "rr": null
+      },
+      "confidence": "LOW",
+      "expected_confidence": "LOW",
+      "has_conflict": false,
+      "expected_conflict": false,
+      "citations_count": 0
+    },
+    {
+      "id": "Q12",
+      "category": "unanswerable",
+      "question": "How do I submit an expense reimbursement for client dinners?",
+      "retrieval": {
+        "hit@1": null,
+        "hit@3": null,
+        "hit@5": null,
+        "rr": null
+      },
+      "confidence": "LOW",
+      "expected_confidence": "LOW",
+      "has_conflict": false,
+      "expected_conflict": false,
+      "citations_count": 0
+    }
+  ]
+}

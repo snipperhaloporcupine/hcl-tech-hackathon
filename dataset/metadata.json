@@ -1,0 +1,62 @@
+[
+    {
+        "id": "IT001",
+        "title": "Account Management",
+        "url": "https://docs.gitlab.com/user/profile/",
+        "filename": "IT001.md"
+    },
+    {
+        "id": "IT002",
+        "title": "Project Settings",
+        "url": "https://docs.gitlab.com/user/project/settings/",
+        "filename": "IT002.md"
+    },
+    {
+        "id": "PROD001",
+        "title": "Manage Subscription",
+        "url": "https://docs.gitlab.com/subscriptions/manage_subscription/",
+        "filename": "PROD001.md"
+    },
+    {
+        "id": "PROD002",
+        "title": "Account and Limit Settings",
+        "url": "https://docs.gitlab.com/administration/settings/account_and_limit_settings/",
+        "filename": "PROD002.md"
+    },
+    {
+        "id": "IT003",
+        "title": "GitLab Issues",
+        "url": "https://docs.gitlab.com/user/project/issues/",
+        "filename": "IT003.md"
+    },
+    {
+        "id": "IT004",
+        "title": "Merge Requests",
+        "url": "https://docs.gitlab.com/user/project/merge_requests/",
+        "filename": "IT004.md"
+    },
+    {
+        "id": "IT005",
+        "title": "GitLab Repository",
+        "url": "https://docs.gitlab.com/user/project/repository/",
+        "filename": "IT005.md"
+    },
+    {
+        "id": "IT006",
+        "title": "GitLab CI/CD Pipelines",
+        "url": "https://docs.gitlab.com/ci/pipelines/",
+        "filename": "IT006.md"
+    },
+    {
+        "id": "IT007",
+        "title": "GitLab Runners",
+        "url": "https://docs.gitlab.com/ci/runners/",
+        "filename": "IT007.md"
+    },
+    {
+        "id": "IT008",
+        "title": "GitLab User Permissions",
+        "url": "https://docs.gitlab.com/user/permissions/",
+        "filename": "IT008.md"
+    }
+]
